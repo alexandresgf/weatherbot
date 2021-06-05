@@ -1,0 +1,26 @@
+# Ignore hidden folders
+.git/
+.vscode/*
+.idea/
+.deploy/
+
+# Ignore non-hidden folders
+__pycache__/
+build/
+dist/
+logs/*/*
+dbs/
+items/
+eggs/
+
+# Accept files from ignored folders
+!.vscode/settings.json
+!.gitkeep
+
+# Ignore setup files
+*.env
+
+# Ignore files
+*.pyc
+*.egg
+*.egg-info

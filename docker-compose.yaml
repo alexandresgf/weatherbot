@@ -1,0 +1,24 @@
+version: "2"
+services:
+  scrapyd:
+    container_name: scrapyd-weatherbot
+    image: alexandresgf/scrapyd-service:latest
+    environment:
+      SCRAPYD_PROJECT_NAME: weatherbot
+    ports:
+      - 6800:6800
+    volumes:
+      - .:/home/spidercluster/weatherbot
+    networks:
+      - weatherbotnet
+  mongo:
+    container_name: mongo-weatherbot
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    networks:
+      - weatherbotnet
+
+networks:
+  weatherbotnet:
+    driver: bridge
